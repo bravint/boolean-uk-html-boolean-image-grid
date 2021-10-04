@@ -1,118 +1,124 @@
 /*RESET*/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100vw;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        max-width: 100vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
 
 /*HEADER*/
 
-header {
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 100px;
-    background-color: #0a1429;
-    z-index: 100;
+    header {
+
+/*Set header to top of viewport*/
+
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        height: 100px;
+        background-color: #0a1429;
 
 /*Set flexbox for logo and position logo within header*/
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 30px;
-}
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 30px;
+    }
 
 /*Hero banner*/
 
-.hero {
-    width: 100%;
-    height: 70vh;
-    background-image: url("assets/images/hero.jpg");
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+    .hero {
+        height: 50vh;
+        background-image: url("assets/images/hero.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    main{
+        margin: 20px;
     }
 
 /*Gallery - Main Grid*/
 
-.gallery {
-    margin: 1vh 0;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 1vh;
-    flex-wrap: wrap;
-}
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 320px);
+        grid-template-rows: repeat (auto-fit, 560px);
+        gap: 20px;
+        justify-content: center; 
+    }
 
 /*Cards*/
 
-.item {
-    position: relative;
-    height: 35rem;
-    width: 20rem;
-    display: grid;
-    grid-template-areas:
-        "image"
-        "link"
-        "desc" ;
-    grid-template-rows: 3fr 1fr 2fr;
-    border: 1px solid black;
-    border-radius: 20px;
-}
+    .item {
+        position: relative; /*Used to position boolean logo on top right - see .float too*/
+        height: 560px;
+        width: 320px;
+        display: grid;
+        grid-template-areas:
+            "image"
+            "link"
+            "desc" ;
+        grid-template-rows: 3fr 1fr 2fr;
+        border: 1px solid black;
+        border-radius: 20px;
+    }   
 
 /*Image*/
 
-.laptop {
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    grid-area: image;
-    width: 100%;
-    object-fit: cover;
-}
+    .laptop {
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        grid-area: image;
+        width: 100%;
+        object-fit: cover;
+    }
 
 /*Social media icons*/
 
-.links {
-    margin-top: 20px;
-    grid-area: link;
-    display: flex;
-    gap: 5px;
-    justify-content: right;
-    margin-bottom: 20px;
-    margin-right: 10px;
-}
+    .links {
+        margin: 10px;
+        grid-area: link;
+        display: flex;
+        gap: 5px;
+        justify-content: right;
+    }
 
 /*Description for image*/
 
-p {
-    padding: 10px;
-    grid-area: desc;
-    size: 1rem;
-    font-weight: 500;
-}
+    p {
+        padding: 10px;
+        grid-area: desc;
+        size: 1rem;
+        font-weight: 500;
+    }
 
 /*Boolean logo within card*/
 
-.float {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 50%;
-}
+    .float {
+        position: absolute; /*Used to position boolean logo on top right*/
+        top: 10px;
+        right: 10px; /*fix position of boolean logo 10px from top and right edge of box*/
+        border-radius: 50%;
+    }
 
 /* FOOTER*/
 
-footer {
-    width: 100vw;
-    background-color: #0a1429;
-    text-align: center;
-    color: white;
-}
+    footer {
+        background-color: #0a1429;
+        text-align: center;
+        color: white;
+    }
+
 /*For linked pages only*/
 
-a {
-    text-decoration: none;
-    color: white;
-}
+    a {
+        text-decoration: none;
+        color: white;
+    }
